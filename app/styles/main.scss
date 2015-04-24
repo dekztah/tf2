@@ -226,7 +226,6 @@ header {
     bottom: 0;
     z-index: 2;
     transition: opacity 1s ease-out 2s;
-    // @include ng-if;
 }
 .loading {
     position: absolute;

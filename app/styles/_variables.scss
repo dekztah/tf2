@@ -16,23 +16,3 @@ $color13: #666666;
 $color14: #CFCFC2;
 
 $colors: $color2, $color3, $color4, $color5, $color6, $color8, $color10, $color14;
-
-@mixin ng-show-hide {
-    &.ng-hide-remove {
-        opacity: 0;
-        display: block !important;
-
-        &.ng-hide-remove-active {
-            opacity: 1;
-        }
-    }
-
-    &.ng-hide-add {
-        opacity: 1;
-        display: block !important;
-
-        &.ng-hide-add-active {
-            opacity: 0;
-        }
-    }
-}

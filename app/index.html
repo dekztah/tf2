@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
     </head>
-    <body data-ng-controller="TilesCtrl" ng-class="{'login': !storedToken}" class="vbox">
+    <body data-ng-controller="TilesCtrl" class="vbox">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -42,7 +42,6 @@
         <!-- build:js(.) scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-animate/angular-animate.js"></script>
         <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
         <script src="bower_components/get-style-property/get-style-property.js"></script>
         <script src="bower_components/get-size/get-size.js"></script>
@@ -52,7 +51,6 @@
         <script src="bower_components/matches-selector/matches-selector.js"></script>
         <script src="bower_components/outlayer/item.js"></script>
         <script src="bower_components/outlayer/outlayer.js"></script>
-        <script src="bower_components/fizzy-ui-utils/utils.js"></script>
         <script src="bower_components/masonry/masonry.js"></script>
         <script src="bower_components/imagesloaded/imagesloaded.js"></script>
         <script src="bower_components/momentjs/moment.js"></script>
@@ -64,8 +62,8 @@
         <script src="scripts/services/helpers.js"></script>
         <script src="scripts/services/tumblr.js"></script>
         <script src="scripts/directives/theme.js"></script>
-        <script src="scripts/directives/masonry.js"></script>
         <script src="scripts/controllers/tiles.js"></script>
+        <script src="scripts/directives/masonry.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/config.js -->
