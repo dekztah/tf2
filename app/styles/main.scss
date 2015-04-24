@@ -20,11 +20,11 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #fff;
+    background: none;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #ccc;
+    background: $white;
 }
 
 html,
@@ -42,6 +42,12 @@ html.white {
         -webkit-filter: invert(1);
     }
     header .stored-url {
+        color: $white;
+        .remove {
+            border-left: 1px solid rgba($white,0.3);
+        }
+    }
+    .tile .delete {
         color: $white;
     }
     .tile-data {
@@ -78,6 +84,10 @@ button {
     text-align: center;
     outline: none;
     cursor: pointer;
+
+    &:disabled {
+        color: rgba($black, 0.2);
+    }
 }
 #image-load-progress {
     width: 100%;
@@ -117,6 +127,9 @@ header {
     #stored {
         margin-bottom: 30px;
     }
+    #toggleadd {
+        width: 100%;
+    }
     .stored-url {
         padding: 5px 8px;
         text-transform: uppercase;
@@ -144,6 +157,24 @@ header {
         }
         &:hover .remove{
             opacity: 1;
+        }
+    }
+    #addnew {
+        position: relative;
+        input {
+            border-radius: 4px;
+            padding: 7px;
+            background: $white;
+            border: none;
+            width: 100%;
+        }
+        .action {
+            position: absolute;
+            right: 0;
+            top: 0;
+            button {
+                float: left;
+            }
         }
     }
     #info {

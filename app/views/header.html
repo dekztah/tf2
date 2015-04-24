@@ -14,10 +14,21 @@
                 ng-mouseleave="deleteHighlight(url, false)">
             </div>
         </div>
+        <button id="toggleadd" ng-click="add = true" ng-show="!add" class="icon-plus"></button>
+        <div id="addnew" ng-show="add">
+            <form>
+                <input type="text" id="url-input" ng-model="tumblrUrl.name" placeholder="type tumblr name" ng-class="error === 404 ? 'error' : ''" autofocus/>
+                <div class="action">
+                    <button id="store" ng-disabled="!tumblrUrl.name" ng-click="addUrl(); add = false" class="icon-floppy-disk"></button>
+                    <button id="closeadd" ng-click="add = false" class="icon-cross"></button>
+                </div>
+            </form>
+        </div>
     </div>
-    <button id="toggleadd" ng-click="add = true" ng-show="!add" class="icon-plus"></button>
-    <button ng-click="changeTheme('white')" ng-class="{'active': theme.bgr === 'white'}" class="icon-format-paint"></button>
-    <button ng-click="changeTheme('black')" ng-class="{'active': theme.bgr === 'black'}" class="icon-format-paint"></button>
+
+
+    <button ng-click="changeTheme('white')" ng-show="theme.bgr === 'black'" class="icon-format-paint"></button>
+    <button ng-click="changeTheme('black')" ng-show="theme.bgr === 'white'" class="icon-format-paint"></button>
 
     <div id="info">
         <div ng-if="!storedUrls.length">Add some feeds...</div>

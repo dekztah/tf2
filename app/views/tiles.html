@@ -1,14 +1,7 @@
 <progress id="image-load-progress" value="{{loadedImageCount / posts.length}}" ng-show="!imagesLoaded"></progress>
 <div id="content" ng-init="multipleFetch(0)">
     <div id="mask" ng-show="add" ng-click="add = false"></div>
-    <div id="addnew" ng-show="add">
-        <form>
-            <input type="text" id="url-input" ng-model="tumblrUrl.name" placeholder="type tumblr name" ng-class="error === 404 ? 'error' : ''" autofocus/>
-            <span class="sitename">.tumblr.com</span>
-            <button id="store" ng-disabled="!tumblrUrl.name" ng-click="addUrl()">STORE</button>
-            <button id="closeadd" ng-click="add = false" class="icon-cross"></button>
-        </form>
-    </div>
+
 
     <div id="tiles" data-masonry="{{posts.length}}" ng-class="{'loaded': imagesLoaded}" ng-cloak>
         <div

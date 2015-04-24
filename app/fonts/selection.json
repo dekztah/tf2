@@ -19,7 +19,7 @@
 				{}
 			],
 			"properties": {
-				"order": 16,
+				"order": 7,
 				"id": 3,
 				"prevSize": 24,
 				"code": 58881,
@@ -47,7 +47,7 @@
 				{}
 			],
 			"properties": {
-				"order": 15,
+				"order": 6,
 				"id": 2,
 				"prevSize": 24,
 				"code": 58882,
@@ -75,7 +75,7 @@
 				{}
 			],
 			"properties": {
-				"order": 14,
+				"order": 5,
 				"id": 1,
 				"prevSize": 24,
 				"code": 58883,
@@ -103,7 +103,7 @@
 				{}
 			],
 			"properties": {
-				"order": 13,
+				"order": 4,
 				"id": 0,
 				"prevSize": 24,
 				"code": 58884,
@@ -112,6 +112,35 @@
 			"setIdx": 0,
 			"setId": 1,
 			"iconIdx": 3
+		},
+		{
+			"icon": {
+				"paths": [
+					"M896 0h-896v1024h1024v-896l-128-128zM512 128h128v256h-128v-256zM896 896h-768v-768h64v320h576v-320h74.978l53.022 53.018v714.982z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"floppy-disk",
+					"save"
+				],
+				"grid": 16
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"order": 9,
+				"id": 3,
+				"prevSize": 16,
+				"code": 58887,
+				"name": "floppy-disk"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 0
 		},
 		{
 			"icon": {
@@ -135,7 +164,7 @@
 				{}
 			],
 			"properties": {
-				"order": 12,
+				"order": 3,
 				"id": 2,
 				"prevSize": 16,
 				"code": 58885,
@@ -143,7 +172,7 @@
 			},
 			"setIdx": 1,
 			"setId": 0,
-			"iconIdx": 0
+			"iconIdx": 1
 		},
 		{
 			"icon": {
@@ -165,7 +194,7 @@
 				{}
 			],
 			"properties": {
-				"order": 11,
+				"order": 2,
 				"id": 1,
 				"prevSize": 16,
 				"code": 58886,
@@ -173,7 +202,7 @@
 			},
 			"setIdx": 1,
 			"setId": 0,
-			"iconIdx": 1
+			"iconIdx": 2
 		},
 		{
 			"icon": {
@@ -204,7 +233,7 @@
 			},
 			"setIdx": 1,
 			"setId": 0,
-			"iconIdx": 2
+			"iconIdx": 3
 		}
 	],
 	"height": 1024,
