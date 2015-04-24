@@ -26,23 +26,10 @@
         </div>
     </div>
 
-
     <button ng-click="changeTheme('white')" ng-show="theme.bgr === 'black'" class="icon-format-paint"></button>
     <button ng-click="changeTheme('black')" ng-show="theme.bgr === 'white'" class="icon-format-paint"></button>
 
-    <div id="info">
-        <div ng-if="!storedUrls.length">Add some feeds...</div>
-        <div ng-if="loading" class="spinner-wrapper" >
-            <div class="loader"></div>
-            fetching data...
-        </div>
-        <div class="spinner-wrapper" ng-if="!loading && !imagesLoaded && storedUrls.length && !error">
-            <div class="loader"></div>
-            <div class="percentage">{{(loadedImageCount / posts.length) * 100 | number : 0 }}%</div>
-            loading images...
-        </div>
-        <div id="error" ng-show="error"><span class="icon-notification"></span>{{error}}</div>
-    </div>
+
     <div id="bottom">
         <button class="prev" ng-click="multipleFetch(page.start-50)" ng-disabled="page.start == 0">&#9664;</button>
         <div class="page" ng-show="storedUrls.length">{{page.start > 0 ? page.start * storedUrls.length + 1 + '-': '1 - '}}{{(50 + page.start) * storedUrls.length}}</div>

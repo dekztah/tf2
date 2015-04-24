@@ -101,7 +101,7 @@ button {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 3;
 
     &::-webkit-progress-bar {
         background: $color7;
@@ -180,21 +180,7 @@ header {
     #info {
         margin-top: 30px;
     }
-    .spinner-wrapper {
-        position: relative;
-        margin: 0 auto;
-        width: 100px;
-        font-size: 12px;
-    }
-    .percentage {
-        width: 40px;
-        text-align: center;
-        color: $color3;
-        font-size: 16px;
-        position: absolute;
-        left: 32px;
-        top: 40px;
-    }
+
     #bottom {
         position: absolute;
         bottom: 30px;
@@ -227,6 +213,50 @@ header {
     flex: 1 100%;
     flex-shrink: 1;
     padding: 15px 0 15px 15px;
+}
+#info {
+    flex: 1 100%;
+}
+.loading-overlay {
+    // background: $black;
+    position: fixed;
+    left: 237px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    transition: opacity 1s ease-out 2s;
+    // @include ng-if;
+}
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    margin-left: -60px;
+    height: 100px;
+    margin-top: -50px;
+}
+.spinner-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100px;
+    font-size: 12px;
+
+    .text {
+        margin-top: 10px;
+        text-align: center;
+        color: rgba($white, 0.2);
+    }
+}
+.percentage {
+    width: 40px;
+    text-align: center;
+    color: $color3;
+    font-size: 16px;
+    position: absolute;
+    left: 32px;
+    top: 38px;
 }
 #tiles {
     opacity: 0;

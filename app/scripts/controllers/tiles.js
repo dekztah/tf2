@@ -2,7 +2,6 @@
 
 angular.module('tf2App').controller('TilesCtrl', function ($scope, $document, $http, $q, localStorageService, $location, defaultFeedz, tumblrService, helperService) {
 
-    $scope.storedToken = true;
     var searchObj = $location.path().replace('/', ''),
         storageKey = searchObj || 'tumblrUrls',
         urlIndex;

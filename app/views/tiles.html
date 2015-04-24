@@ -2,12 +2,27 @@
 <div id="content" ng-init="multipleFetch(0)">
     <div id="mask" ng-show="add" ng-click="add = false"></div>
 
+    <div class="loading-overlay">
+        <div class="loading">
+            <div ng-if="!storedUrls.length">Add some feeds...</div>
+            <div ng-if="loading" class="spinner-wrapper" >
+                <div class="loader"></div>
+                <div class="text">fetching data...</div>
 
+            </div>
+            <div class="spinner-wrapper" ng-if="!loading && !imagesLoaded && storedUrls.length && !error">
+                <div class="loader"></div>
+                <div class="percentage">{{(loadedImageCount / posts.length) * 100 | number : 0 }}%</div>
+                <div class="text">loading images...</div>
+            </div>
+            <div id="error" ng-show="error"><span class="icon-notification"></span>{{error}}</div>
+        </div>
+    </div>
     <div id="tiles" data-masonry="{{posts.length}}" ng-class="{'loaded': imagesLoaded}" ng-cloak>
         <div
             ng-repeat="post in posts"
             class="tile url-{{post.site[0]}}"
-            ng-class="{'new': post['unix-timestamp'] * 1000 > lastFetch && blink, 'highlight': post.highlight, 'dim': post.dim, 'delete-highlight': post.deleteHighlight}">
+            ng-class="{'new': post['unix-timestamp'] * 1000 > lastFetch, 'highlight': post.highlight, 'dim': post.dim, 'delete-highlight': post.deleteHighlight}">
             <a href="{{post['photo-url-1280']}}" target="_blank"><img ng-src="{{post['photo-url-250']}}"/></a>
             <div class="delete">
                 <span class="icon-delete"></span>

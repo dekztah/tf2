@@ -16,13 +16,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <div id="login" ng-show="!storedToken" ng-cloak>
-            <div class="wrapper">
-                <img src="images/tf2_logo.png"/>
-            </div>
-        </div>
-        <div id="flex" ng-show="storedToken" ng-cloak class="hbox">
+        <div id="flex" ng-cloak class="hbox">
             <header data-ng-include="'views/header.html'"></header>
             <div id="main" ng-include="'views/tiles.html'"></div>
         </div>
