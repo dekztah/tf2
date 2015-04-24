@@ -1,0 +1,25 @@
+'use strict';
+
+angular.module('tf2App').service('helperService', function ($window) {
+    var moment = $window.moment;
+    // var tumblrDate = 'YYYY-MM-DD HH:mm:ss ZZZ';
+    var tumblrDate = 'ddd, DD MMM YYYY HH:mm:ss';
+
+    this.compare = function(a,b) {
+        if (a['unix-timestamp'] < b['unix-timestamp']) {
+            return 1;
+        }
+        if (a['unix-timestamp'] > b['unix-timestamp']) {
+            return -1;
+        }
+        return 0;
+    };
+
+    this.customDate = function(date, format) {
+        if (format === 'ago') {
+            return moment(date, tumblrDate).fromNow();
+        } else {
+            return moment(date, tumblrDate).format(format);
+        }
+    };
+});

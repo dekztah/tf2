@@ -1,0 +1,38 @@
+$white: #ffffff;
+$black: #000000;
+$color1: #212121;
+$color2: #FD971F;
+$color3: #A6E22E;
+$color4: #66D9EF;
+$color5: #F92672;
+$color6: #AE81FF;
+$color7: #333333;
+$color8: #E6DB74;
+$color9: #565656;
+$color10: #75715E;
+$color11: rgba(21, 21, 21, 0.8);
+$color12: rgba(51, 51, 51, 0.6);
+$color13: #666666;
+$color14: #CFCFC2;
+
+$colors: $color2, $color3, $color4, $color5, $color6, $color8, $color10, $color14;
+
+@mixin ng-show-hide {
+    &.ng-hide-remove {
+        opacity: 0;
+        display: block !important;
+
+        &.ng-hide-remove-active {
+            opacity: 1;
+        }
+    }
+
+    &.ng-hide-add {
+        opacity: 1;
+        display: block !important;
+
+        &.ng-hide-add-active {
+            opacity: 0;
+        }
+    }
+}

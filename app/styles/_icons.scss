@@ -1,0 +1,47 @@
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-new-releases:before {
+    content: "\e600";
+}
+
+.icon-paint-format:before {
+    content: "\e90c";
+}
+
+.icon-clock:before {
+    content: "\e94e";
+}
+
+.icon-notification:before {
+    content: "\ea08";
+}
+
+.icon-plus:before {
+    content: "\ea0a";
+}
+
+.icon-minus:before {
+    content: "\ea0b";
+}
+
+.icon-cross:before {
+    content: "\ea0f";
+}
+
+.icon-clock:before,
+.icon-error:before {
+    margin-right: 40px;
+    font-size: 60px;
+}

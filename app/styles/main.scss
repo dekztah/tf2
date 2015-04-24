@@ -1,0 +1,258 @@
+@import "fonts";
+@import "icons";
+@import "variables";
+@import "spinner";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 9px;
+    background: none;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI';
+}
+html.white {
+    body {
+        background: $white;
+    }
+    .logo {
+        -webkit-filter: invert(1);
+    }
+    header .stored-url {
+        color: $white;
+    }
+    .tile-data {
+        color: $white;
+    }
+    button {
+        background: rgba($black, 0.2);
+        color: $white;
+    }
+}
+body {
+    overflow-y: scroll;
+    color: $white;
+    background: $black;
+    transition: 0.3s ease-in background;
+}
+.vbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.hbox {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+button {
+    border-radius: 4px;
+    background: rgba($white, 0.2);
+    width: 30px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+}
+#image-load-progress {
+    width: 100%;
+    display: block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    border: none;
+    background: $color7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    &::-webkit-progress-bar {
+        background: $color7;
+    }
+    &::-moz-progress-bar {
+        background: $color3;
+    }
+    &::-webkit-progress-value {
+        background: $color3;
+    }
+}
+// header/sidebar area
+header {
+    flex: 1 237px;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    .logo {
+        margin: 30px auto;
+        display: block;
+        transition: 0.3s ease-in all;
+    }
+    #stored {
+        margin-bottom: 30px;
+    }
+    .stored-url {
+        padding: 5px 8px;
+        text-transform: uppercase;
+        border-radius: 4px;
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        color: $black;
+        position: relative;
+
+        .remove {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            margin-left: 10px;
+            padding-left: 5px;
+            cursor: pointer;
+            border-left: 1px solid rgba($black,0.3);
+            opacity: 0;
+            transition: 0.2s ease-out all;
+
+        }
+        &:hover .remove{
+            opacity: 1;
+        }
+    }
+    #info {
+        margin-top: 30px;
+    }
+    .spinner-wrapper {
+        position: relative;
+        margin: 0 auto;
+        width: 100px;
+        font-size: 12px;
+    }
+    .percentage {
+        width: 40px;
+        text-align: center;
+        color: $color3;
+        font-size: 16px;
+        position: absolute;
+        left: 32px;
+        top: 40px;
+    }
+    #bottom {
+        position: absolute;
+        bottom: 30px;
+        width: 222px;
+
+        .prev {
+            float: left;
+        }
+        .page {
+            width: 162px;
+            float: left;
+            text-align: center;
+        }
+        .next {
+            float: right;
+        }
+    }
+}
+#fixed {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    // background: #666;
+    width: 222px;
+}
+
+// tile area
+#main {
+    flex: 1 100%;
+    flex-shrink: 1;
+    padding: 15px 0 15px 15px;
+}
+#tiles {
+    opacity: 0;
+    transition: 0.3s linear all;
+
+    &.loaded {
+        opacity: 1;
+    }
+}
+.tile {
+    width: 222px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 4px solid transparent;
+
+    a {
+        display: block;
+        overflow: hidden;
+        border-radius: 4px;
+    }
+
+    img {
+        display: block;
+        position: relative;
+        width: 214px;
+    }
+    &:hover {
+        img {
+            opacity: 0.8;
+            transition: opacity 100ms ease;
+        }
+    }
+    &.new {
+        // -webkit-animation: pulsate 4s ease-in-out;
+        // -webkit-animation-iteration-count: infinite;
+    }
+}
+.tile-data {
+    padding: 10px;
+    line-height: 1;
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    color: $black;
+
+    .new {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}
+@for $i from 1 through length($colors) {
+    .url-#{($i - 1)} {
+        background: nth($colors, $i);
+    }
+}
+
+@-webkit-keyframes pulsate {
+    0% {transform: scale(0.9)}
+    50% {transform: scale(1.0)}
+    100% {transform: scale(0.9)}
+}
