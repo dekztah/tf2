@@ -1,11 +1,23 @@
 <div id="fixed">
     <img class="logo" src="images/tf2_logo_120.png"/>
     <div id="stored" class="clearfix">
-        <div class="stored-url url-{{url[0]}}" ng-repeat="url in storedUrls">{{url[1]}}<div class="remove icon-cross" ng-click="removeUrl(url)"></div></div>
+        <div ng-repeat="url in storedUrls" class="stored-url url-{{url[0]}}">
+            <div
+                ng-mouseenter="highlight(url, true)"
+                ng-mouseleave="highlight(url, false)">
+                {{url[1]}}
+            </div>
+            <div
+                class="remove icon-cross"
+                ng-click="removeUrl(url)"
+                ng-mouseenter="deleteHighlight(url, true)"
+                ng-mouseleave="deleteHighlight(url, false)">
+            </div>
+        </div>
     </div>
     <button id="toggleadd" ng-click="add = true" ng-show="!add" class="icon-plus"></button>
-    <button ng-click="changeTheme('white')" ng-class="{'active': theme.bgr === 'white'}" class="icon-paint-format"></button>
-    <button ng-click="changeTheme('black')" ng-class="{'active': theme.bgr === 'black'}" class="icon-paint-format"></button>
+    <button ng-click="changeTheme('white')" ng-class="{'active': theme.bgr === 'white'}" class="icon-format-paint"></button>
+    <button ng-click="changeTheme('black')" ng-class="{'active': theme.bgr === 'black'}" class="icon-format-paint"></button>
 
     <div id="info">
         <div ng-if="!storedUrls.length">Add some feeds...</div>

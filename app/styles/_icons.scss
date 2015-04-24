@@ -1,5 +1,5 @@
 [class^="icon-"], [class*=" icon-"] {
-    font-family: 'icomoon';
+    font-family: 'tf2';
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -12,36 +12,31 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-format-paint:before {
+    content: "\e601";
+}
+
+.icon-delete:before {
+    content: "\e602";
+}
+
+.icon-report-problem:before {
+    content: "\e603";
+}
+
 .icon-new-releases:before {
-    content: "\e600";
-}
-
-.icon-paint-format:before {
-    content: "\e90c";
-}
-
-.icon-clock:before {
-    content: "\e94e";
-}
-
-.icon-notification:before {
-    content: "\ea08";
-}
-
-.icon-plus:before {
-    content: "\ea0a";
-}
-
-.icon-minus:before {
-    content: "\ea0b";
+    content: "\e604";
 }
 
 .icon-cross:before {
-    content: "\ea0f";
+    content: "\e605";
 }
 
-.icon-clock:before,
-.icon-error:before {
-    margin-right: 40px;
-    font-size: 60px;
+.icon-plus:before {
+    content: "\e606";
 }
+
+.icon-minus:before {
+    content: "\e600";
+}
+

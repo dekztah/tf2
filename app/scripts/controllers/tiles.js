@@ -70,6 +70,29 @@ angular.module('tf2App').controller('TilesCtrl', function ($scope, $document, $h
         $scope.posts = postsToKeep;
         setStoredUrls();
     };
+    $scope.highlight = function(url, value) {
+        if ($scope.posts) {
+            angular.forEach($scope.posts, function(post){
+                if (post.site[1] === url[1]) {
+                    post.highlight = value;
+                } else {
+                    post.dim = value;
+                }
+            });
+        }
+    };
+
+    $scope.deleteHighlight = function(url, value) {
+        if ($scope.posts) {
+            angular.forEach($scope.posts, function(post){
+                if (post.site[1] === url[1]) {
+                    post.deleteHighlight = value;
+                } else {
+                    // post.highlight = value;
+                }
+            });
+        }
+    };
 
     $scope.multipleFetch = function(offset) {
         $scope.error = '';

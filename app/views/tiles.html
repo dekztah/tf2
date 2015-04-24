@@ -11,13 +11,21 @@
     </div>
 
     <div id="tiles" data-masonry="{{posts.length}}" ng-class="{'loaded': imagesLoaded}" ng-cloak>
-        <div ng-repeat="post in posts" class="tile url-{{post.site[0]}}" ng-class="{'new': post['unix-timestamp'] * 1000 > lastFetch && blink}" ng-click="blink = false" ng-init="blink = true">
+        <div
+            ng-repeat="post in posts"
+            class="tile url-{{post.site[0]}}"
+            ng-class="{'new': post['unix-timestamp'] * 1000 > lastFetch && blink, 'highlight': post.highlight, 'dim': post.dim, 'delete-highlight': post.deleteHighlight}">
             <a href="{{post['photo-url-1280']}}" target="_blank"><img ng-src="{{post['photo-url-250']}}"/></a>
+            <div class="delete">
+                <span class="icon-delete"></span>
+                remove blog?
+            </div>
             <div class="tile-data url-{{post.site[0]}}">
                 {{post.date}} <br/>
                 <!-- <span class="dimensions">{{post.width}} x {{post.height}}</span> -->
                 <span class="new icon-new-releases" ng-if="post['unix-timestamp'] * 1000 > lastFetch"></span>
             </div>
+
         </div>
     </div>
     <div id="foot">
