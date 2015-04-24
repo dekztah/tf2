@@ -2,7 +2,7 @@
 <div id="content" ng-init="multipleFetch(0)">
     <div id="mask" ng-show="add" ng-click="add = false"></div>
 
-    <div class="loading-overlay">
+    <div class="loading-overlay" ng-show="loading || !imagesLoaded">
         <div class="loading">
             <div ng-if="!storedUrls.length">Add some feeds...</div>
             <div ng-if="loading" class="spinner-wrapper" >
@@ -24,7 +24,7 @@
             class="tile url-{{post.site[0]}}"
             ng-class="{'new': post['unix-timestamp'] * 1000 > lastFetch, 'highlight': post.highlight, 'dim': post.dim, 'delete-highlight': post.deleteHighlight}">
             <a href="{{post['photo-url-1280']}}" target="_blank"><img ng-src="{{post['photo-url-250']}}"/></a>
-            <div class="delete">
+            <div class="delete" ng-show="post.deleteHighlight">
                 <span class="icon-delete"></span>
                 remove blog?
             </div>
