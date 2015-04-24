@@ -1,12 +1,7 @@
-# tf2
+![alt text](https://raw.githubusercontent.com/dekztah/tf2/master/app/images/tf2_small.png)  #tf2
+---
+---
+revamped UI for my previous project [tf](https://github.com/dekztah/tf)
+tumblr feed reader built with AngularJS
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.11.1.
-
-## Build & development
-
-Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
+![alt tag](https://raw.githubusercontent.com/dekztah/tf2/master/tf2_preview.png)
