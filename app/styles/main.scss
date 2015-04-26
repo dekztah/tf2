@@ -57,6 +57,19 @@ html.white {
         background: rgba($black, 0.2);
         color: $white;
     }
+    .loader {
+        border-top: 15px solid rgba($black, 0.2);
+        border-right: 15px solid rgba($black, 0.2);
+        border-bottom: 15px solid rgba($black, 0.2);
+    }
+    .spinner-wrapper {
+        .text {
+            color: rgba($black, 0.2);
+        }
+    }
+    ::-webkit-scrollbar-thumb {
+        background: $black;
+    }
 }
 body {
     overflow-y: scroll;

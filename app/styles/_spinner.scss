@@ -1,10 +1,9 @@
-
 .loader {
     font-size: 10px;
     position: relative;
-    border-top: 15px solid rgba(255, 255, 255, 0.2);
-    border-right: 15px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 15px solid rgba(255, 255, 255, 0.2);
+    border-top: 15px solid rgba($white, 0.2);
+    border-right: 15px solid rgba($white, 0.2);
+    border-bottom: 15px solid rgba($white, 0.2);
     border-left: 15px solid $color3;
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
