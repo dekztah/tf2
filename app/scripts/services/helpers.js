@@ -2,8 +2,7 @@
 
 angular.module('tf2App').service('helperService', function ($window) {
     var moment = $window.moment;
-    // var tumblrDate = 'YYYY-MM-DD HH:mm:ss ZZZ';
-    var tumblrDate = 'ddd, DD MMM YYYY HH:mm:ss';
+    var tumblrDate = 'YYYY-MM-DD HH:mm:ss ZZZ';
 
     this.compare = function(a,b) {
         if (a['unix-timestamp'] < b['unix-timestamp']) {

@@ -4,7 +4,8 @@ angular.module('tf2App').controller('TilesCtrl', function ($scope, $document, $h
 
     var searchObj = $location.path().replace('/', ''),
         storageKey = searchObj || 'tumblrUrls',
-        urlIndex;
+        deletedUrlIndexes = localStorageService.get('deletedUrlIndexes') || [],
+        storeIndex;
 
     var getStoredUrls = function() {
         $scope.storedUrls = localStorageService.get(storageKey) || defaultFeedz;
@@ -17,7 +18,6 @@ angular.module('tf2App').controller('TilesCtrl', function ($scope, $document, $h
     };
 
     var updateSettings = function() {
-        urlIndex = $scope.storedUrls.length;
         $scope.page = {
             previous: false,
             start: 0
@@ -40,8 +40,14 @@ angular.module('tf2App').controller('TilesCtrl', function ($scope, $document, $h
         });
         if (alreadyStored === false) {
             $http.jsonp('http://' + $scope.tumblrUrl.name + '.tumblr.com/api/read/json?callback=JSON_CALLBACK&num=0').success(function() {
-                $scope.storedUrls.push([urlIndex, $scope.tumblrUrl.name]);
-                urlIndex++;
+                if (deletedUrlIndexes[0]) {
+                    storeIndex = deletedUrlIndexes[0];
+                    deletedUrlIndexes.splice(0, 1);
+                    localStorageService.set('deletedUrlIndexes', deletedUrlIndexes);
+                } else {
+                    storeIndex = $scope.storedUrls.length;
+                }
+                $scope.storedUrls.push([storeIndex, $scope.tumblrUrl.name]);
                 $scope.tumblrUrl.name = '';
                 setStoredUrls();
                 $scope.multipleFetch();
@@ -57,6 +63,8 @@ angular.module('tf2App').controller('TilesCtrl', function ($scope, $document, $h
         angular.forEach($scope.storedUrls, function(item, index) {
             if (item[1] === url[1]) {
                 $scope.storedUrls.splice(index, 1);
+                deletedUrlIndexes.push(item[0]);
+                localStorageService.set('deletedUrlIndexes', deletedUrlIndexes);
             }
         });
         if ($scope.posts) {
@@ -113,8 +121,7 @@ angular.module('tf2App').controller('TilesCtrl', function ($scope, $document, $h
             localStorageService.add(storageKey + '.lastFetch', newDate);
             angular.forEach(results, function(result, index){
                 angular.forEach(result.data.posts, function(post){
-                    // post.date = helperService.customDate(post['date-gmt'], 'MMMM DD YYYY | HH:mm');
-                    post.date = helperService.customDate(post.date, 'ago');
+                    post.date = helperService.customDate(post['date-gmt'], 'ago');
                     post.site = $scope.storedUrls[index];
                     $scope.posts.push(post);
                 });
