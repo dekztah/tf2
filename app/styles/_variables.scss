@@ -15,4 +15,13 @@ $color12: rgba(51, 51, 51, 0.6);
 $color13: #666666;
 $color14: #CFCFC2;
 
-$colors: $color2, $color3, $color4, $color5, $color6, $color8, $color10, $color14;
+$color15: darken($color2, 10);
+$color16: darken($color3, 10);
+$color17: darken($color4, 10);
+$color18: darken($color5, 10);
+$color19: darken($color6, 10);
+$color20: darken($color8, 10);
+$color21: darken($color10, 10);
+$color22: darken($color14, 10);
+
+$colors: $color2, $color3, $color4, $color5, $color6, $color8, $color10, $color14, $color15, $color16, $color17, $color18, $color19, $color20, $color21, $color22;
