@@ -119,13 +119,15 @@ angular.module('tf2App').controller('TilesCtrl', function ($scope, $http, localS
             $scope.loading = false;
             $scope.lastFetch = localStorageService.get(storageKey + '.lastFetch');
             localStorageService.add(storageKey + '.lastFetch', newDate);
-            angular.forEach(results, function(result, index){
-                angular.forEach(result.data.posts, function(post){
+
+            for (var i = 0; i < results.length; i++) {
+                for (var j = 0; j < results[i].data.posts.length; j++) {
+                    var post = results[i].data.posts[j];
                     post.date = helperService.customDate(post['date-gmt'], 'ago');
-                    post.site = $scope.storedUrls[index];
+                    post.site = $scope.storedUrls[i];
                     $scope.posts.push(post);
-                });
-            });
+                }
+            }
             $scope.posts.sort(helperService.compare);
         }, function() {
             $scope.loading = false;
