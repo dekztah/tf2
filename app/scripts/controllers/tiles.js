@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('tf2App').controller('TilesCtrl', function ($scope, $document, $http, $q, localStorageService, $location, defaultFeedz, tumblrService, helperService) {
+angular.module('tf2App').controller('TilesCtrl', function ($scope, $http, localStorageService, $location, defaultFeeds, tumblrService, helperService) {
 
     var searchObj = $location.path().replace('/', ''),
         storageKey = searchObj || 'tumblrUrls',
@@ -8,7 +8,7 @@ angular.module('tf2App').controller('TilesCtrl', function ($scope, $document, $h
         storeIndex;
 
     var getStoredUrls = function() {
-        $scope.storedUrls = localStorageService.get(storageKey) || defaultFeedz;
+        $scope.storedUrls = localStorageService.get(storageKey) || defaultFeeds;
         updateSettings();
     };
 
