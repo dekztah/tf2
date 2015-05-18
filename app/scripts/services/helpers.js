@@ -16,9 +16,9 @@ angular.module('tf2App').service('helperService', function ($window) {
 
     this.customDate = function(date, format) {
         if (format === 'ago') {
-            return moment(date, tumblrDate).fromNow();
+            return moment.utc(date, tumblrDate).fromNow();
         } else {
-            return moment(date, tumblrDate).format(format);
+            return moment.utc(date, tumblrDate).format(format);
         }
     };
 });
