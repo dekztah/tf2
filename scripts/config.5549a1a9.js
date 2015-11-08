@@ -1,0 +1,1 @@
+"use strict";angular.module("tf2App").constant({defaultFeeds:[[0,"andrewberg"],[1,"otakugangsta"],[2,"sid766"],[3,"ascout"],[4,"bravecadet"],[5,"enigmaticsparrow"],[6,"wiremuse"]]}),angular.module("tf2App").config(["localStorageServiceProvider",function(a){a.setPrefix("tf2")}]);
