@@ -42,11 +42,9 @@ module.exports = function (grunt) {
             },
             jsTest: {
                 files: ['test/spec/{,*/}*.js'],
-                tasks: ['newer:jshint:test', 'karma']
-            },
-            compass: {
+            sass: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass:server', 'autoprefixer']
+                tasks: ['sass', 'postcss']
             },
             gruntfile: {
                 files: ['Gruntfile.js']
