@@ -204,7 +204,7 @@ module.exports = function (grunt) {
         },
 
         // Compiles Sass to CSS and generates necessary files if requested
-        
+
         sass: {
             options: {
                 sourceMap: true
@@ -359,6 +359,7 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         '.htaccess',
                         '*.html',
+                        'CNAME',
                         'views/{,*/}*.html',
                         'images/{,*/}*.{webp}',
                         'fonts/{,*/}*.*'
