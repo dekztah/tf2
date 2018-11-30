@@ -23,14 +23,15 @@ angular.module('tf2App').directive('masonry', function ($window, $anchorScroll, 
             if (value > 0 && oldValue === '0') {
                 $timeout(function(){
                     var imgLoad = imagesLoaded(element[0]);
-                    imgLoad.on('done', function(){
+                    imgLoad.on('always', function(){
                         masonryUpdate();
                         $scope.$apply(function(){
                             $rootScope.imagesLoaded = true;
                         });
                         $anchorScroll();
                     });
-                    imgLoad.on('progress', function(){
+                    imgLoad.on('progress', function(imgLoad, image){
+                        image.img.parentNode.className = image.isLoaded ? '' : 'is-broken';
                         $scope.$apply(function(){
                             $rootScope.loadedImageCount++;
                         });

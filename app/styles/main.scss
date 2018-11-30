@@ -290,6 +290,12 @@ header {
         display: block;
         overflow: hidden;
         border-radius: 4px;
+
+        &.is-broken {
+            img {
+                height: 214px;
+            }
+        }
     }
 
     img {
