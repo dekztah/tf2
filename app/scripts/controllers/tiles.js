@@ -39,7 +39,7 @@ angular.module('tf2App').controller('TilesCtrl', function ($scope, $http, localS
             }
         });
         if (alreadyStored === false) {
-            $http.jsonp('http://' + $scope.tumblrUrl.name + '.tumblr.com/api/read/json?callback=JSON_CALLBACK&num=0').success(function() {
+            $http.jsonp('http://' + $scope.tumblrUrl.name + '.tumblr.com/api/read/json?num=0').success(function() {
                 if (deletedUrlIndexes[0]) {
                     storeIndex = deletedUrlIndexes[0];
                     deletedUrlIndexes.splice(0, 1);
