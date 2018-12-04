@@ -125,7 +125,9 @@ angular.module('tf2App').controller('TilesCtrl', function ($scope, $http, localS
                     var post = results[i].data.posts[j];
                     post.date = helperService.customDate(post['date-gmt'], 'ago');
                     post.site = $scope.storedUrls[i];
-                    $scope.posts.push(post);
+                    if (post['photo-url-250']) {
+                        $scope.posts.push(post);
+                    }
                 }
             }
             $scope.posts.sort(helperService.compare);
